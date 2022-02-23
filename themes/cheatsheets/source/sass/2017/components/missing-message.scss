@@ -1,0 +1,45 @@
+.missing-message.missing-message {
+  align-items: center;
+  border-top: solid 1px $dark-line-color;
+  display: flex;
+  margin: 32px 0;
+  padding-top: 16px;
+  text-align: center;
+
+  & > h3,
+  & > p {
+    margin: 0;
+    padding: 0;
+  }
+
+  & > h3 {
+    @include font-size(1);
+    color: $base-text;
+    flex: 1 0 auto;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  & > h3::before {
+    @include ion-md-arrow-forward(24px, $base-a);
+    content: '';
+    margin-right: 16px;
+  }
+
+  & > p {
+    color: $base-mute;
+    flex: 0 0 auto;
+  }
+
+  @media (min-width: 769px) {
+    padding-top: 32px;
+  }
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+
+    & > p {
+      margin-top: 16px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+/*
+ * Home link
+ */
+
+.back-button {
+  border-radius: 50%;
+  display: inline-block;
+  height: 48px;
+  line-height: 48px - 2px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 100ms linear;
+  width: 48px;
+
+  // Colors
+  &,
+  &:visited {
+    color: $base-mute;
+  }
+
+  // Active
+  &:hover,
+  &:focus {
+    background: $base-a;
+    color: white;
+    opacity: 1;
+  }
+
+  // Icon
+  &::before {
+    @include ion-md-arrow-back(24px, $base-text);
+    content: '';
+    vertical-align: middle;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    @include ion-md-arrow-back(24px, white);
+  }
+
+  // Smaller on mobile
+  @media (max-width: 480px) {
+    height: 32px;
+    line-height: 32px - 2;
+    width: 32px;
+  }
+
+  // Icon: smaller on mobile
+  @media (max-width: 480px) {
+    &::before {
+      font-size: 16px;
+    }
+  }
+}

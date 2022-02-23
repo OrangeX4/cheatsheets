@@ -1,0 +1,25 @@
+/*
+ * Disqus
+ */
+
+.comments-area {
+  & {
+    margin: 32px 0 16px;
+  }
+
+  // Container
+  & > .container {
+    @include gutter(padding-left);
+    @include gutter(padding-right);
+    margin: 0 auto;
+    max-width: $area-width;
+  }
+
+  // Horizontal line
+  & > .container::before {
+    background: linear-gradient(to right, $dark-line-color 50%, transparent);
+    content: '';
+    display: block;
+    height: 1px;
+  }
+}

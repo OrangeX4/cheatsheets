@@ -1,0 +1,19 @@
+/*
+    content: '';
+ * Spacer before footer
+ */
+
+.pre-footer {
+  & {
+    padding: 32px;
+    padding-bottom: 48px;
+    padding-top: 24px;
+    text-align: center;
+  }
+
+  & > .icon::before {
+    @include ion-ios-flash(32px, $base-mute);
+    content: '';
+    opacity: 0.25;
+  }
+}

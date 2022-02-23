@@ -1,0 +1,17 @@
+/*
+ * Related posts
+ */
+
+.related-posts-area {
+  & {
+    @include section-with-container;
+    background: $gray-bg;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  @media (min-width: 481px) {
+    padding-bottom: 64px;
+    padding-top: 64px;
+  }
+}

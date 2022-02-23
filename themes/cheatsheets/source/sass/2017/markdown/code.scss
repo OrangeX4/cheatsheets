@@ -1,0 +1,102 @@
+.MarkdownBody {
+  & code{
+    color: $base-code;
+    font-size: $code-size;
+  }
+  & pre,& code{
+    font-family: $monospace-font;
+  }
+  :not(pre) > code {
+    background-color: $base-inline-code-background-light;
+    color: $base-inline-code;
+    padding: 1px 5px;
+  }
+
+  .h3-section-list :not(pre) > code {
+    background-color: $base-inline-code-background;
+    color: $base-inline-code;
+    padding: 1px 5px;
+  }
+
+  .h3-section > .body {
+    & > pre,
+    & > ul,
+    & > ol,
+    & > iframe,
+    & > table {
+      & ~ p > code {
+        background-color: $base-inline-code-background-dark;
+      }
+
+      & ~ ul,
+      & ~ ol {
+        & :not(pre) > code {
+          background-color: $base-inline-code-background-dark;
+        }
+      }
+    }
+  }
+}
+
+// Reduce line height for box drawing characters
+.MarkdownBody pre.-box-chars {
+  line-height: 1.32;
+}
+
+// For figlet.md
+.MarkdownBody pre.-figlet {
+  font-size: 11px;
+  line-height: 1;
+}
+
+
+.MarkdownBody pre.-setup,
+.MarkdownBody p.-setup,
+.MarkdownBody ul.-setup,
+.MarkdownBody p.-crosslink {
+  background: $gray-bg;
+}
+
+/*
+ * Syntax highlight
+ */
+
+.token {
+  $cA: $base-b;
+  $cA-3: adjust-color($cA, $lightness: 8%, $hue: -10deg);
+  $cA-7: adjust-color($cA, $lightness: -8%, $hue: 10deg);
+
+  $cB: $base-c;
+  $cB-3: adjust-color($cB, $lightness: 8%, $hue: -10deg);
+
+  $cM: #aaa; // Mute
+
+  &.tag,
+  &.keyword {
+    color: $cA;
+  }
+
+  &.tag {
+    color: $cA-7;
+  }
+
+  &.value,
+  &.string,
+  &.number,
+  &.attr-value,
+  &.boolean,
+  &.regex {
+    color: $cB;
+  }
+
+  &.function,
+  &.attr-name {
+    color: $cA-3;
+  }
+
+  &.comment,
+  &.punctuation,
+  &.operator {
+    color: $cM;
+  }
+}

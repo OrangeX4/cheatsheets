@@ -1,0 +1,8 @@
+@mixin section-with-container {
+  & > .container {
+    @include gutter(padding-left);
+    @include gutter(padding-right);
+    margin: 0 auto;
+    max-width: $area-width;
+  }
+}

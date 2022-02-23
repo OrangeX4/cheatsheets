@@ -1,0 +1,52 @@
+/*
+ * The top-level heading
+ */
+
+.main-heading {
+  @include heading-style;
+
+  & {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  & > h1 {
+    @include font-size(8);
+    font-family: $body-font;
+    font-weight: 200;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  & > h1 > em {
+    color: lighten($gray-text, 20%);
+    font-style: normal;
+  }
+}
+
+.main-heading.-center {
+  & > h1 {
+    text-align: center;
+  }
+
+  & > .adbox {
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  & > .adbox > .ad {
+    display: inline-block;
+  }
+
+  & > .adbox > .ad.-carbon {
+    margin-top: 16px;
+  }
+}
+
+/**
+ * Add some space in preview mode
+ */
+
+.PreviewMode .main-heading {
+  margin-top: 16px;
+}

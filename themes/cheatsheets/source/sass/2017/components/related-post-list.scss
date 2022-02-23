@@ -1,0 +1,27 @@
+.related-post-list {
+  &,
+  & > li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+
+  & > .item {
+    flex: 1 1 auto;
+    margin: 4px;
+
+    @media (min-width: 481px) {
+      flex: 1 1 40%;
+    }
+  }
+}
