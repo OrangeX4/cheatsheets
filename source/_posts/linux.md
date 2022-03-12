@@ -74,10 +74,12 @@ sudo docker run -d --rm --name rsshub -p 1200:1200 -e CACHE_EXPIRE=30 -e GITHUB_
 commit_id=c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1
 
 # Download url is: https://update.code.visualstudio.com/commit:${commit_id}/server-linux-x64/stable
-curl -sSL "https://update.code.visualstudio.com/commit:${commit_id}/server-linux-x64/stable" -o vscode-server-linux-x64.tar.gz
+# curl -sSL "https://update.code.visualstudio.com/commit:${commit_id}/server-linux-x64/stable" -o vscode-server-linux-x64.tar.gz
+
+scp /home/orangex4/Downloads/vscode-server-linux-x64.tar.gz orangex4@www.runoob.com:/home/orangex4/vscode-server-linux-x64.tar.gz
 
 mkdir -p ~/.vscode-server/bin/${commit_id}
 # assume that you upload vscode-server-linux-x64.tar.gz to /tmp dir
-tar zxvf /tmp/vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/${commit_id} --strip 1
+tar zxvf /home/orangex4/vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/${commit_id} --strip 1
 touch ~/.vscode-server/bin/${commit_id}/0
 ```
