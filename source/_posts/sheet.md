@@ -16,6 +16,9 @@ du -h --max-depth=1 | grep M | sort -n
 
 # 显示大容量软件包
 dpigs -H --lines=20
+
+# 显示硬盘分析
+baobab
 ```
 
 ### Clean Space
