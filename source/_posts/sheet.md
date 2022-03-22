@@ -42,6 +42,9 @@ journalctl --vacuum-time=1w
 
 # 清理配置文件
 dpkg --list | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge
+
+# danger: 清理旧内核, 请先用 uname -r 确认
+dpkg --list | grep linux-image | awk '{ print $2 }' | sort -V | sed -n '/'`uname -r`'/q;p' | xargs sudo apt-get -y purge
 ```
 
 ### Screenshot OCR
