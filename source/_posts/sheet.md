@@ -13,6 +13,9 @@ du -h --max-depth=1 | grep G | sort -n
 
 # 查找超过 1 MiB 的目录并排序
 du -h --max-depth=1 | grep M | sort -n
+
+# 显示大容量软件包
+dpigs -H --lines=20
 ```
 
 ### Clean Space
@@ -30,6 +33,12 @@ rm -rf ~/.cache/pip
 rm -rf ~/.config/Code/CachedExtensionVSIXs
 rm -rf ~/.config/Code/CachedData
 rm -rf ~/.config/Code/User/workspaceStorage
+
+# 清理 journal
+journalctl --vacuum-time=1w
+
+# 清理配置文件
+dpkg --list | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge
 ```
 
 ### Screenshot OCR
