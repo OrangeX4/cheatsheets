@@ -19,6 +19,9 @@ dpigs -H --lines=20
 
 # 显示硬盘分析
 baobab
+
+# 显示 pip 包
+pip list | awk 'NR > 2 {print $0}' | awk '{print $1}' | xargs pip show | grep -E 'Location:|Name:' | cut -d ' ' -f 2 | paste -d ' ' - - | awk '{print $2 "/" tolower($1)}' | xargs du -sh 2> /dev/null | sort -n | grep 'M'
 ```
 
 ### Clean Space
