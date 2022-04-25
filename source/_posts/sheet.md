@@ -73,3 +73,11 @@ cat $SCR_IMG.txt | xsel -bi
 
 exit
 ```
+
+### Install OpenCV2
+
+```bash
+sudo apt install libopencv-dev
+sudo apt install python-opencv
+pip install opencv-python
+```
