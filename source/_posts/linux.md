@@ -83,3 +83,25 @@ mkdir -p ~/.vscode-server/bin/${commit_id}
 tar zxvf /home/orangex4/vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/${commit_id} --strip 1
 touch ~/.vscode-server/bin/${commit_id}/0
 ```
+
+### Software
+
+```markdown
+- Latte
+- 火焰截图
+- Edge
+- Yakuake
+- Weylus
+- Seafile
+- drawio
+- GeoGebra
+- Icalingua
+- WPS
+- VS Code
+- Wemeet
+- Peek
+- SimpleScreenRecorder
+- LaTeX
+- docker
+- git, vim, python3, node, java, go, rust
+```
