@@ -8,7 +8,7 @@ categories: language
 ### Flask Server
 
 ```python
-from flask import Flask, request, Response
+from flask import Flask, request
 import json
 
 app = Flask(__name__)
@@ -31,14 +31,14 @@ def hello_world():
 def post_api():
   data = request.json
   result = data
-  return Response(json.dumps(result), mimetype='application/json')
+  return result
 
 
 @app.route("/get", methods=['GET'])
 def get_api():
   data = request.values.get('data')
   result = data
-  return Response(json.dumps(result), mimetype='application/json')
+  return result
 
 
 if __name__ == '__main__':
