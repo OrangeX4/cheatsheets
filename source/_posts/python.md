@@ -27,12 +27,18 @@ def hello_world():
   return "<p>hello world</p>"
 
 
-@app.route("/api", methods=['POST'])
-def predict_api():
+@app.route("/post", methods=['POST'])
+def post_api():
   data = request.json
   result = data
   return Response(json.dumps(result), mimetype='application/json')
 
+
+@app.route("/get", methods=['GET'])
+def get_api():
+  data = request.values.get('data')
+  result = data
+  return Response(json.dumps(result), mimetype='application/json')
 
 
 if __name__ == '__main__':
