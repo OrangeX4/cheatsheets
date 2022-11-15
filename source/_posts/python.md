@@ -1,16 +1,4 @@
----
-title: python
-categories: language
----
-
-## get started
-
-### Flask Server
-
-```python
 from flask import Flask, request
-import json
-
 app = Flask(__name__)
 
 
@@ -24,23 +12,34 @@ def after_request(resp):
 
 @app.route("/")
 def hello_world():
-  return "<p>hello world</p>"
+    return "<p>hello world</p>"
 
 
 @app.route("/post", methods=['POST'])
 def post_api():
-  data = request.json
-  result = data
-  return result
+    data = request.json
+    result = data
+    if result:
+        return result
+    else:
+        return {
+            'status': 'error',
+            'message': ''
+        }
 
 
 @app.route("/get", methods=['GET'])
 def get_api():
-  data = request.values.get('data')
-  result = data
-  return result
+    data = request.values.get('data')
+    result = data
+    if result:
+        return result
+    else:
+        return {
+            'status': 'error',
+            'message': ''
+        }
 
 
 if __name__ == '__main__':
-  app.run(debug=False, port=7685, host='0.0.0.0')
-```
+    app.run(debug=False, port=7685, host='0.0.0.0')
