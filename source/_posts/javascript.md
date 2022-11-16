@@ -7,7 +7,7 @@ categories: language
 
 ### React Query
 
-```python
+```js
 function getQuery(search) {
   const result = {}
   if (search.length > 1) {
@@ -24,4 +24,25 @@ function getQuery(search) {
 }
 const search = window.location.search
 const query = getQuery(search)
+```
+
+### Download File
+
+```js
+function downloadFile(filename, text) {
+    const elementA = document.createElement('a')
+
+    // 文件的名称为时间戳加文件名后缀
+    elementA.download = filename
+    elementA.style.display = 'none'
+
+    // 生成一个blob二进制数据，内容为文本数据
+    const blob = new Blob([text])
+
+    //生成一个指向blob的URL地址，并赋值给a标签的href属性
+    elementA.href = URL.createObjectURL(blob)
+    document.body.appendChild(elementA)
+    elementA.click()
+    document.body.removeChild(elementA)
+}
 ```
